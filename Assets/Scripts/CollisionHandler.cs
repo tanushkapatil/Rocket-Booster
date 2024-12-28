@@ -12,6 +12,7 @@ public class CollisionHandler : MonoBehaviour
     [SerializeField] ParticleSystem CrashParticles ;
     AudioSource audioSource;
     bool isControllable = true ;
+    bool isCollidable = true ;
 
     private void Start() {
         audioSource = GetComponent<AudioSource>();
@@ -25,11 +26,14 @@ public class CollisionHandler : MonoBehaviour
         if(Keyboard.current.lKey.isPressed) {
             LoadNextLevel();
         }
+        else if(Keyboard.current.cKey.isPressed) {
+            isCollidable = !isCollidable;
+        }
         //particular level
     }
 
     private void OnCollisionEnter(Collision other) {
-        if(!isControllable) { return; }
+        if(!isControllable || !isCollidable) { return; }
 
         switch(other.gameObject.tag){
             case "Fuel":
