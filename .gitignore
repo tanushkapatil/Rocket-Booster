@@ -1,0 +1,18 @@
+Assets/*
+!Assets/Scripts/
+Packages
+Rocket-Launcher
+/Assembly-CSharp.csproj
+.vscode
+/Assembly-CSharp-Editor.csproj
+'Rocket Booster.sln'
+/Library
+/Temp
+/Obj
+/Build
+/Builds
+/Logs
+/ProjectSettings
+/Rocket-Launcher
+/UserSettings
+
