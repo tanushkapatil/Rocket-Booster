@@ -1,5 +1,6 @@
 using UnityEditor.SearchService;
 using UnityEngine;
+using UnityEngine.InputSystem;
 using UnityEngine.SceneManagement;
 
 public class CollisionHandler : MonoBehaviour
@@ -15,6 +16,18 @@ public class CollisionHandler : MonoBehaviour
     private void Start() {
         audioSource = GetComponent<AudioSource>();
     }
+
+    private void Update() {
+        RespondToDebugKeys();
+    }
+
+    void RespondToDebugKeys() {
+        if(Keyboard.current.lKey.isPressed) {
+            LoadNextLevel();
+        }
+        //particular level
+    }
+
     private void OnCollisionEnter(Collision other) {
         if(!isControllable) { return; }
 
