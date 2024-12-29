@@ -18,7 +18,7 @@ public class CollisionHandler : MonoBehaviour
         audioSource = GetComponent<AudioSource>();
     }
 
-    private void Update() {
+    /*private void Update() {
         RespondToDebugKeys();
     }
 
@@ -30,7 +30,7 @@ public class CollisionHandler : MonoBehaviour
             isCollidable = !isCollidable;
         }
         //particular level
-    }
+    }*/
 
     private void OnCollisionEnter(Collision other) {
         if(!isControllable || !isCollidable) { return; }
